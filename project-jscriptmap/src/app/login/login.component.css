@@ -1,0 +1,10 @@
+.xyz{
+    background-image: url("../../assets/images/beach.jpg");
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* .card {
+    opacity: 0.6;
+} */
