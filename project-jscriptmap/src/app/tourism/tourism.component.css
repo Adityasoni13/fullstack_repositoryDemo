@@ -1,0 +1,12 @@
+.maindiv{
+
+    background-color: rgb(255, 204, 0) ;
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+}
+.div2{
+    background-color: white;
+    padding: 30px;
+}

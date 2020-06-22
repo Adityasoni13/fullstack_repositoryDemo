@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component'
 import { WebsiteComponent } from './website/website.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MapComponent } from './map/map.component';
+import { TourismComponent } from './tourism/tourism.component';
 
 
 const routes: Routes = [
@@ -32,8 +35,15 @@ const routes: Routes = [
                                             },
                                         {
                                                  path:'login', component:LoginComponent
+                                        },
+                                        {
+                                             path:'map', component:MapComponent
+                                        },
+                                        {
+                                             path:'tourism', component:TourismComponent
                                         }
-]}
+                             ]},
+   {path:'dashboard', component:DashboardComponent}                       
 ]
 
 @NgModule({

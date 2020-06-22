@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { WebsiteComponent } from './website/website.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MapComponent } from './map/map.component';
+import { TourismComponent } from './tourism/tourism.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     HeaderComponent,
     WebsiteComponent,
-    DashboardComponent
+    DashboardComponent,
+    MapComponent,
+    TourismComponent
   ],
   imports: [
     BrowserModule,
