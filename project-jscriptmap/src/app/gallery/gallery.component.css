@@ -1,8 +1,19 @@
 
 /* Make the image fully responsive */
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
+#demo{
+  width: 70%;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 5px solid rgb(255, 208, 0) ;
 }
+img{
+  background-size: 70% 500px;
 
-
+}
+.xyz{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}

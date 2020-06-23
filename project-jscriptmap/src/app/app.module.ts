@@ -14,6 +14,8 @@ import { WebsiteComponent } from './website/website.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
 import { TourismComponent } from './tourism/tourism.component';
+import { FooterComponent } from './footer/footer.component';
+import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TourismComponent } from './tourism/tourism.component';
     WebsiteComponent,
     DashboardComponent,
     MapComponent,
-    TourismComponent
+    TourismComponent,
+    FooterComponent,
+    DashboardheaderComponent
   ],
   imports: [
     BrowserModule,

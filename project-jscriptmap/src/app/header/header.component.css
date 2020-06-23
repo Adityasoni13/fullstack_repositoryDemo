@@ -1,4 +1,7 @@
 .nav-link:hover{
-background-color: black;
-transition: 1s;
+background-color:rgb(255, 208, 0) ;
+transition: 0.7s;
+border-radius: 8px;
+
+
 }

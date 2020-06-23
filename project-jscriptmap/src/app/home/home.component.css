@@ -33,7 +33,7 @@
         }
 
    .div1{
-          margin-top: 170px;
+          margin-top: 138px;
           height: 200px;
          }
 
@@ -123,6 +123,12 @@
         color: white;
     }
     
-
+    .txtdiv{
+        width: 539px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        margin-left: 405px;
+    }
 
    

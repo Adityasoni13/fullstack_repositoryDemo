@@ -43,7 +43,7 @@ const routes: Routes = [
                                              path:'tourism', component:TourismComponent
                                         }
                              ]},
-   {path:'dashboard', component:DashboardComponent}                       
+   {path:'dashboard', component:DashboardComponent,}                       
 ]
 
 @NgModule({
