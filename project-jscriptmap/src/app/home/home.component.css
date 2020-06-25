@@ -58,8 +58,9 @@
         background-size: cover;
         background-position: center;
     }
-    .grid:hover{
-        transition: 1s;
+    .grid img:hover{
+        transform: scale(1.1);
+        transition: .5s;
     }
     .thre div{
       width: 120px;

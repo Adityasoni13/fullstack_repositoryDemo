@@ -16,6 +16,9 @@ import { MapComponent } from './map/map.component';
 import { TourismComponent } from './tourism/tourism.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardheaderComponent } from './dashboardheader/dashboardheader.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LocationmapComponent } from './locationmap/locationmap.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,14 @@ import { DashboardheaderComponent } from './dashboardheader/dashboardheader.comp
     MapComponent,
     TourismComponent,
     FooterComponent,
-    DashboardheaderComponent
+    DashboardheaderComponent,
+    LocationmapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

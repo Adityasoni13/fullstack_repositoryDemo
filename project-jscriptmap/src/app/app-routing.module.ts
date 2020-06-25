@@ -10,6 +10,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
 import { TourismComponent } from './tourism/tourism.component';
+import { AuthGuard } from './auth.guard';
+import { LocationmapComponent } from './locationmap/locationmap.component';
 
 
 const routes: Routes = [
@@ -43,8 +45,12 @@ const routes: Routes = [
                                              path:'tourism', component:TourismComponent
                                         }
                              ]},
-   {path:'dashboard', component:DashboardComponent,}                       
-]
+   {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard], children:[
+                                        {
+                                             path: 'locationmap', component:LocationmapComponent
+                                        }
+   ]}                       
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

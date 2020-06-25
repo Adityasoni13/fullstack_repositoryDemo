@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 export class DashboardheaderComponent implements OnInit {
 
   constructor(private router:Router) { }
-
+  @Input() name
+  
   ngOnInit(): void {
   }
+  
   logout()
   {
+    localStorage.removeItem("email");
+    localStorage.removeItem('name')
+    alert(localStorage.getItem('email'))
     this.router.navigate(['/']);
   }
 }
