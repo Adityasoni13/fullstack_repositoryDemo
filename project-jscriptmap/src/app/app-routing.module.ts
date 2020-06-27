@@ -44,6 +44,7 @@ const routes: Routes = [
                                         {
                                              path:'tourism', component:TourismComponent
                                         }
+                                        
                              ]},
    {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard], children:[
                                         {

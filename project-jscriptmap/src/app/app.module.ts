@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LocationmapComponent } from './locationmap/locationmap.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { LocationmapComponent } from './locationmap/locationmap.component';
     FooterComponent,
     DashboardheaderComponent,
     LocationmapComponent
+    
   ],
   imports: [
     BrowserModule,
