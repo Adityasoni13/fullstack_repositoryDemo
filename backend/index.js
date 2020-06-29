@@ -100,22 +100,40 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
     }
 })
 
-
-   
-   
-   
-   
-   
-   
-   
-
-
-
-
-
-    
-    
 })
+
+
+
+app.post('/forms', bodyParser.json() ,(req,res)=>{
+
+    var collection = connection.db(mongodb).collection('tourismform');
+
+collection.find(()=>{
+    res.send({ status:"ok", data:"success" })
+
+
+})
+
+
+
+
+
+
+
+
+   
+})
+   
+   
+   
+   
+   
+
+
+
+
+
+    
     
 
 
