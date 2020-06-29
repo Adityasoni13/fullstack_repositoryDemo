@@ -1,7 +1,7 @@
 .map-container {
     overflow: hidden;
     position: relative;
-    height: 600px;
+    height: 500px;
   }
 
   .map-container iframe {
@@ -15,5 +15,5 @@
   }
   .card{
     border: 2px solid rgb(255, 208, 0);
-    margin-top: 72px;
+    
   }

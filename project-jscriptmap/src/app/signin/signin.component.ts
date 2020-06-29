@@ -19,9 +19,10 @@ export class SigninComponent implements OnInit {
   }
     
   signUp()
-  {    alert("working")
+  {   
       this.ds.signUp({name:this.nameProp, email:this.emailProp, password:this.passwordProp, mobile:this.mobileProp})
       .subscribe((response)=>{
+        alert(JSON.stringify(response))
         if(response.status=="ok")
         {
           

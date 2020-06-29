@@ -1,6 +1,37 @@
-<p>locationmap works!</p>
+<h4 style="margin-left: 200px;"> Tourism Feedback Form</h4> 
 
 
-    
+<div class="form">
+    <form class="formmain" #f="ngForm" action="/action_page.php">
+        <div class="form-group">
+            <label for="text">Name:</label>
+            <input #nameref="ngModel"  [(ngModel)]="textProp" type="text" class="form-control" id="text" placeholder="Enter Your name" name="text">
+          </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input  #emailref="ngModel"  [(ngModel)]="emailProp" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+      
+        <div class="form-group">
+          <label for="address">Description for Tourism Place:</label>
+          <input  #addressref="ngModel"  [(ngModel)]="addressProp" style="height: 100px;" type="text" class="form-control" id="address" placeholder="Enter Description" name="address">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Location:</label>
+          <input  #latref="ngModel"  [(ngModel)]="latitudeProp" type="loction" class="form-control" id="long" placeholder="latitude" name="latitude">
+          <input  #lonref="ngModel"  [(ngModel)]="longitudeProp" type="loction" class="form-control" id="lat" placeholder="longitude" name="longitude">
+        </div>
+        <div class="form-group">
+            <label for="email">Select file :</label>
+            <input #fileref="ngModel"  [(ngModel)]="myfileProp" type="file" id="myfile" name="myfile">
+         </div>
+       
+        <button style="margin-left: 130px; border-radius: 5px;" type="submit" class="btn btn-primary" (click)="form()">Submit</button>
+      </form>
+</div>
+
+
+
+   
 
    

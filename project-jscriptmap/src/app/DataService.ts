@@ -25,4 +25,8 @@ export class DataService {
     return this.http.post('http://localhost:3000/sign-in', d);
   }
   
+  form(d): any {
+    return this.http.post('http://localhost:3000/forms', d);
+  }
+  
 }

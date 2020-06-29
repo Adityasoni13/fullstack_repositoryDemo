@@ -38,9 +38,7 @@ const routes: Routes = [
                                         {
                                                  path:'login', component:LoginComponent
                                         },
-                                        {
-                                             path:'map', component:MapComponent
-                                        },
+                                      
                                         {
                                              path:'tourism', component:TourismComponent
                                         }
@@ -49,6 +47,9 @@ const routes: Routes = [
    {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard], children:[
                                         {
                                              path: 'locationmap', component:LocationmapComponent
+                                        },
+                                        {
+                                             path:'map', component:MapComponent
                                         }
    ]}                       
 ];
