@@ -5,26 +5,43 @@
     <form class="formmain" #f="ngForm" action="/action_page.php">
         <div class="form-group">
             <label for="text">Name:</label>
-            <input #nameref="ngModel"  [(ngModel)]="textProp" type="text" class="form-control" id="text" placeholder="Enter Your name" name="text">
+            <input #nameref="ngModel"  [(ngModel)]="textprop" type="text" class="form-control" id="text" placeholder="Enter Your name" name="text" required>
           </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input  #emailref="ngModel"  [(ngModel)]="emailProp" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input  #emailref="ngModel"  [(ngModel)]="emailprop" type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
         </div>
-      
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <textarea  #locationref="ngModel"  [(ngModel)]="locprop"   class="form-control"  name="location" placeholder="Enter Location"  id="location"cols="30" rows="10" required></textarea>  
+        </div>  
         <div class="form-group">
           <label for="address">Description for Tourism Place:</label>
-          <input  #addressref="ngModel"  [(ngModel)]="addressProp" style="height: 100px;" type="text" class="form-control" id="address" placeholder="Enter Description" name="address">
+          <textarea  #addressref="ngModel"  [(ngModel)]="addressprop"  class="form-control"  name="address" placeholder="Enter Description"  id="address"cols="30" rows="10" required></textarea>   
+        </div>
+        <div class="form-group"> 
+          <label for="loc">Enter latitude of the location:</label>
+          <input  #latref="ngModel"  [(ngModel)]="latitudeprop" type="loction" class="form-control" id="long" placeholder="latitude" name="latitude" required>
+         
         </div>
         <div class="form-group">
-          <label for="pwd">Location:</label>
-          <input  #latref="ngModel"  [(ngModel)]="latitudeProp" type="loction" class="form-control" id="long" placeholder="latitude" name="latitude">
-          <input  #lonref="ngModel"  [(ngModel)]="longitudeProp" type="loction" class="form-control" id="lat" placeholder="longitude" name="longitude">
-        </div>
-        <div class="form-group">
+          <label for="loc">Enter longitude of the location:</label>
+          <input  #lonref="ngModel"  [(ngModel)]="longitudeprop" type="loction" class="form-control" id="lat" placeholder="longitude" name="longitude"  required>
+        </div> 
+        <!-- <div class="form-group">
             <label for="email">Select file :</label>
-            <input #fileref="ngModel"  [(ngModel)]="myfileProp" type="file" id="myfile" name="myfile">
-         </div>
+            <input type="file" id="myfile" name="myfile">
+         </div>  -->
+         <div class="form-group">
+          <div class="col-lg-5">
+               <label>form logo</label>
+               <input (change)="getFile($event)"  name="logo" type="file" required>
+           </div>
+           <div class="col-lg-7">
+               <label>form Banner</label>
+               <input (change)="getFile($event)"  name="banner" type="file" required>
+           </div>
+       </div>
        
         <button style="margin-left: 130px; border-radius: 5px;" type="submit" class="btn btn-primary" (click)="form()">Submit</button>
       </form>

@@ -25,8 +25,14 @@ export class DataService {
     return this.http.post('http://localhost:3000/sign-in', d);
   }
   
-  form(d): any {
-    return this.http.post('http://localhost:3000/forms', d);
+  form(formdata: FormData): any {
+    alert(JSON.stringify);
+    return this.http.post('http://localhost:3000/forms', formdata);
+  }
+
+  getEvents():any{
+    //alert(JSON.stringify);
+    return this.http.get("http://localhost:3000/getevent");
   }
   
 }

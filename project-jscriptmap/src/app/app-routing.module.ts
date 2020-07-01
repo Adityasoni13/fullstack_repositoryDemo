@@ -12,6 +12,8 @@ import { MapComponent } from './map/map.component';
 import { TourismComponent } from './tourism/tourism.component';
 import { AuthGuard } from './auth.guard';
 import { LocationmapComponent } from './locationmap/locationmap.component';
+import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,12 @@ const routes: Routes = [
                                         },
                                         {
                                              path:'map', component:MapComponent
+                                        },
+                                        {
+                                             path:'listoffeedback', component:ListoffeedbackComponent
+                                        },
+                                        {
+                                             path:'detail', component:DetailComponent
                                         }
    ]}                       
 ];

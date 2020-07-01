@@ -19,6 +19,8 @@ import { DashboardheaderComponent } from './dashboardheader/dashboardheader.comp
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LocationmapComponent } from './locationmap/locationmap.component';
+import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { LocationmapComponent } from './locationmap/locationmap.component';
     TourismComponent,
     FooterComponent,
     DashboardheaderComponent,
-    LocationmapComponent
+    LocationmapComponent,
+    ListoffeedbackComponent,
+    DetailComponent
     
   ],
   imports: [
