@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');                          // new add
 const { request } = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
-
+var multer = require('multer');                          // new add  
+var fs = require('fs');                                 // new add
 // var dbName = "sampledb"
 
 var mongodb = "projectdata"
@@ -33,7 +35,26 @@ client.connect((err, con)=>{
 
 const app = express();
 
-app.use(cors());
+app.use(cors()); //middleware
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'uploads')));
+
+var storage = multer.diskStorage({
+    destination:(req, file, next)=> {
+        next(null, 'uploads/')
+    },
+    filename:(req, file, next)=> {
+        //console.log("in 35");
+       // console.log(file);
+      //  const ext=file.mimetype.split('/');
+      console.log("->"+file);
+      console.log("->"+file.fieldname);
+        next(null,file.fieldname+".jpg"); 
+    }
+    });
+    var upload = multer({ storage: storage })
+ 
 
 
 app.get('/', (req, res)=>{
@@ -98,34 +119,69 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
         })
 
     }
-})
-
-})
+});
 
 
 
-app.post('/forms', bodyParser.json() ,(req,res)=>{
 
-    var collection = connection.db(mongodb).collection('tourismform');
-
-collection.find(()=>{
-    res.send({ status:"ok", data:"success" })
 
 
 })
-
-
-
-
-
-
-
-
    
+
+// for upload details of logo and banner of all  forms
+app.post('/forms', upload.fields([{
+    name: 'banner', maxCount: 1
+},{
+    name: 'logo', maxCount: 1
+}]), function (req, res) {
+    const collection = connection.db(mongodb).collection('tourismform');
+
+    collection.insert(req.body, (err,r) =>{
+        console.log("working")
+        if(!err)
+        {
+            
+            fs.renameSync('./uploads/banner.jpg', './uploads/banner_'+r.insertedId + '.jpg');
+            fs.renameSync('./uploads/logo.jpg', './uploads/logo_'+r.insertedId + '.jpg');
+
+            res.send({ msg: "tourism form sucessfully inserted", status: 'OK', description: 'course created and file uploaded' });
+        }
+        else
+        {
+            res.send({ msg: "form not inserted", status: 'FAIL', description: 'error' });
+        }
+    });
 })
+
+
+
+// app.post('/forms', bodyParser.json() ,(req,res)=>{
+//     console.log(req.body);
+// var collection = connection.db(mongodb).collection('tourismform');
+
+// collection.insert(req.body, (err, r)=>{
+// console.log("result of insert is _id -> " + r.insertedId)
+//      if (!err) {
+//            res.send({ msg: "sucessfully inserted", status: "ok", description: 'all ok'});
+//          }
+//      else{
+//            res.send({ msg: "not inserted", status: "failed", description: 'error in mongo db'});
+//           }
+
+// });
+// })
+
    
-   
-   
+   //backend event forms
+   app.get('/getevent', (req, res) => {
+    const collection = connection.db('EventsDetails').collection("workshop");
+
+    collection.find().toArray(function (err, docs) {
+
+        res.send({status:"ok", desc:docs});
+    });
+})
    
    
 
