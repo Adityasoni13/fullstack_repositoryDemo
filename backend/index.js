@@ -175,10 +175,11 @@ app.post('/forms', upload.fields([{
    
    //backend event forms
    app.get('/getevent', (req, res) => {
-    const collection = connection.db('EventsDetails').collection("workshop");
+    const collection = connection.db(mongodb).collection('tourismform');
 
     collection.find().toArray(function (err, docs) {
-
+        console.log("tourismform docs");    
+        console.log(docs)
         res.send({status:"ok", desc:docs});
     });
 })

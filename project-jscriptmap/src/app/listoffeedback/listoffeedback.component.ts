@@ -16,6 +16,7 @@ export class ListoffeedbackComponent implements OnInit {
 
   ngOnInit(): void {
     this.ds.getEvents().subscribe((d)=>{
+      alert(JSON.stringify(d));
       this.details=d.desc;
     })
   }
