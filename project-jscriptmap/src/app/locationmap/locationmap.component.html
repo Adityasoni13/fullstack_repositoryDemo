@@ -12,12 +12,12 @@
           <input  #emailref="ngModel"  [(ngModel)]="emailprop" type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
         </div>
         <div class="form-group">
-          <label for="location">Location:</label>
-          <textarea  #locationref="ngModel"  [(ngModel)]="locprop"   class="form-control"  name="location" placeholder="Enter Location"  id="location"cols="30" rows="10" required></textarea>  
+          <label for="location">Mention Location of Toursim Places Which was Visited:</label>
+          <textarea  #locationref="ngModel"  [(ngModel)]="locprop"   class="form-control"  name="location" placeholder="Enter Location"  id="location"cols="30" rows="10" style="height: 150px;" required ></textarea>  
         </div>  
         <div class="form-group">
-          <label for="address">Description for Tourism Place:</label>
-          <textarea  #addressref="ngModel"  [(ngModel)]="addressprop"  class="form-control"  name="address" placeholder="Enter Description"  id="address"cols="30" rows="10" required></textarea>   
+          <label for="address">Description About Tourism Place:</label>
+          <textarea  #addressref="ngModel"  [(ngModel)]="addressprop"  class="form-control"  name="address" placeholder="Enter Description"  id="address"cols="30" rows="10" style="height: 150px;" required ></textarea>   
         </div>
         <div class="form-group"> 
           <label for="loc">Enter latitude of the location:</label>
@@ -33,11 +33,11 @@
             <input type="file" id="myfile" name="myfile">
          </div>  -->
          <div class="form-group">
-          <div class="col-lg-5">
+          <div  style="margin-top: 10px; margin-bottom: 10px;">
                <label>form logo</label>
                <input (change)="getFile($event)"  name="logo" type="file" required>
            </div>
-           <div class="col-lg-7">
+           <div style="margin-top: 10px; margin-bottom: 10px;">
                <label>form Banner</label>
                <input (change)="getFile($event)"  name="banner" type="file" required>
            </div>

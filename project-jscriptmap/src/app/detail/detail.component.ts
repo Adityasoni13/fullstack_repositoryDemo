@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../DataService';
 
 @Component({
@@ -11,8 +11,17 @@ export class DetailComponent implements OnInit {
   details;
   id;
 
-  constructor(private ds:DataService,private route:ActivatedRoute) { }
 
+  //about map
+  // latitude = 20.5937;
+  // longitude = 78.9629;
+  // posts;
+ //about map
+
+
+  constructor(private ds:DataService,private route:ActivatedRoute, private router:Router) { }
+ 
+  
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((p)=>{
       this.id=p.get('id');
@@ -27,6 +36,34 @@ export class DetailComponent implements OnInit {
       //alert(JSON.stringify(this.details));
     })
   });
+
+
+
+  //about map
+//   this.route.queryParamMap.subscribe((p)=>{
+//     this.id=p.get('id');
+//      alert(p.get('id'));
+//       this.ds.getEvents().subscribe((d)=>{
+//         this.posts=d.desc;
+//         this.posts=this.posts.filter((p)=>{
+//           return p._id==this.id;
+          
+//         })
+
+//         console.log(this.posts);
+
+//     })
+// })
+  //about map
+
+
   }
 
+  
+ close(){
+   alert("working")
+   this.router.navigate(['/listoffeedback']);
+  }
+
+ 
 }
