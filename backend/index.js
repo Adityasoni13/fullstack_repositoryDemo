@@ -142,8 +142,8 @@ app.post('/forms', upload.fields([{
         if(!err)
         {
             
-            fs.renameSync('./uploads/banner.jpg', './uploads/banner_'+r.insertedId + '.jpg');
-            fs.renameSync('./uploads/logo.jpg', './uploads/logo_'+r.insertedId + '.jpg');
+            fs.renameSync('./uploads/banner.jpg', './uploads/banner_'+r.insertedIds["0"] + '.jpg');
+            fs.renameSync('./uploads/logo.jpg', './uploads/logo_'+r.insertedIds["0"] + '.jpg');
 
             res.send({ msg: "tourism form sucessfully inserted", status: 'OK', description: 'course created and file uploaded' });
         }

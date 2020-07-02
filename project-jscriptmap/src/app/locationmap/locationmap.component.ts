@@ -25,8 +25,13 @@ export class LocationmapComponent implements OnInit {
   getFile(evnt: any) {
     // console.log(evnt);
      this.banner = evnt.target.files[0];
+ 
+  }
+  getFile2(evnt: any) {
+ 
       this.logo = evnt.target.files[0];
   }
+  
   
    form()
    { const formdata = new FormData();
