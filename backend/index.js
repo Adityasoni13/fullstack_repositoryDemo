@@ -134,7 +134,7 @@ app.post('/forms', upload.fields([{
     name: 'banner', maxCount: 1
 },{
     name: 'logo', maxCount: 1
-}]), function (req, res) {
+}]), function (req, res, next) {
     const collection = connection.db(mongodb).collection('tourismform');
 
     collection.insert(req.body, (err,r) =>{
