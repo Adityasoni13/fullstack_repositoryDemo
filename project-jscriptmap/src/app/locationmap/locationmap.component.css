@@ -6,7 +6,7 @@
      border-radius: 10px;
      box-shadow: 5px 5px 5px gray;
     /* border: 2px solid rgb(255, 208, 0) ; */
-    height: 950px;
+    height: 1050px;
   
 }
 .form-control{
@@ -16,4 +16,7 @@
 
 label{
     margin-left: 130px;
+}
+.form-group{
+    margin-top: 20px;
 }

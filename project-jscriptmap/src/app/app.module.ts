@@ -51,7 +51,7 @@ import { DetailComponent } from './detail/detail.component';
     HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey:''
+      apiKey:'AIzaSyBBK6_E1hrwmL-6Jb1497_yv_pwR8ivpvU'
     }) 
   ],
   providers: [],

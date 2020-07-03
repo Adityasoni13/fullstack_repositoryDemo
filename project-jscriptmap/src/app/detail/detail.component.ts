@@ -5,6 +5,11 @@ import { DataService } from '../DataService';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
+  styles: [`
+    agm-map {
+      height: 300px;
+    }
+  `],
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
@@ -13,9 +18,10 @@ export class DetailComponent implements OnInit {
 
 
   //about map
-  // latitude = 20.5937;
-  // longitude = 78.9629;
-  // posts;
+    latitude = 20.5937;
+    longitude = 78.9629;
+     posts;
+     zoomControl;
  //about map
 
 
@@ -40,20 +46,20 @@ export class DetailComponent implements OnInit {
 
 
   //about map
-//   this.route.queryParamMap.subscribe((p)=>{
-//     this.id=p.get('id');
-//      alert(p.get('id'));
-//       this.ds.getEvents().subscribe((d)=>{
-//         this.posts=d.desc;
-//         this.posts=this.posts.filter((p)=>{
-//           return p._id==this.id;
+  this.route.queryParamMap.subscribe((p)=>{
+    this.id=p.get('id');
+     alert(p.get('id'));
+      this.ds.getEvents().subscribe((d)=>{
+        this.posts=d.desc;
+        this.posts=this.posts.filter((p)=>{
+          return p._id==this.id;
           
-//         })
+        })
 
-//         console.log(this.posts);
+        console.log(this.posts);
 
-//     })
-// })
+    })
+})
   //about map
 
 
@@ -62,7 +68,7 @@ export class DetailComponent implements OnInit {
   
  close(){
    alert("working")
-   this.router.navigate(['/listoffeedback']);
+   this.router.navigate(['/dashboard/listoffeedback']);
   }
 
  

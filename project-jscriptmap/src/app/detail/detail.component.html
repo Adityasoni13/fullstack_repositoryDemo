@@ -42,8 +42,8 @@
                                             </p>
                                         </div>
                                         <div class="shadow-sm rounded p-3">
-                                            <p class="m-3"><strong>Banner of the Tourism Place</strong><br><br>
-                                            <img src="http://localhost:3000/banner_{{details[0]._id}}.jpg" height="100px;" width="100px;">
+                                            <p class="m-3"><strong>Tourism Place</strong><br><br>
+                                            <img src="http://localhost:3000/banner_{{details[0]._id}}.jpg" height="300px;" width="400px;">
                                             </p>
                                         </div>
                                     </div>
@@ -51,17 +51,18 @@
                                         <button type="button" class="btn btn-dark"  (click)="close()">Close</button>
                                       </div>
                                       
-                                    <!-- <div class="map">
+                                     <div class="map">
                                   
 
                                         <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]='3' [zoomControl]='zoomControl'>
-                                          <agm-marker [latitude]="posts[0].latitude" [longitude]="posts[0].longitude" [iconUrl]="{url:'../../assets/img/avt/map-marker.png', scaledSize:{height:45, width:45}}" >
+                                          <agm-marker [latitude]="posts[0].latitude" [longitude]="posts[0].longitude" >
+                                                                              <!-- [iconUrl]="{url:'../../assets/img/avt/map-marker.png', scaledSize:{height:45, width:45}}" > -->
                   
                                             <agm-info-window>
                                               <h6>Longitude:{{posts[0].longitude}}</h6>
                                               <h6>Latitude: {{posts[0].latitude}}</h6>
                                             </agm-info-window>
-                                          </agm-marker> -->
+                                          </agm-marker> 
                   
                                         <!-- <ng-container *ngFor="let u of usersList">
                                           <agm-marker   *ngIf="u.location"    [latitude]='u.location.coordinates[1]'
@@ -75,9 +76,9 @@
                                               </agm-info-window>
                                           </agm-marker>
                                         </ng-container> -->
-                                        <!-- </agm-map>
+                                        </agm-map>
                                     
-                                   </div> -->
+                                   </div> 
 <!--     
                                     <div class="col-lg-6">  
                                         <div class="text-right">
