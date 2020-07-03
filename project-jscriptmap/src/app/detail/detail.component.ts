@@ -5,6 +5,11 @@ import { DataService } from '../DataService';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
+  styles: [`
+    agm-map {
+      height: 300px;
+    }
+  `],
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
@@ -13,8 +18,8 @@ export class DetailComponent implements OnInit {
 
 
   //about map
-  // latitude = 20.5937;
-  // longitude = 78.9629;
+  latitude = 20.5937;
+  longitude = 78.9629;
   // posts;
  //about map
 

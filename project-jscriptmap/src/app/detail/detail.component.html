@@ -51,33 +51,22 @@
                                         <button type="button" class="btn btn-dark"  (click)="close()">Close</button>
                                       </div>
                                       
-                                    <!-- <div class="map">
+                                    <div class="map" style="width: 400px;height: 300px;">
                                   
 
-                                        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]='3' [zoomControl]='zoomControl'>
-                                          <agm-marker [latitude]="posts[0].latitude" [longitude]="posts[0].longitude" [iconUrl]="{url:'../../assets/img/avt/map-marker.png', scaledSize:{height:45, width:45}}" >
+                                        <agm-map style="width:400px; height: 300px;" [latitude]="latitude" [longitude]="longitude" [zoom]='3' >
+                                          <agm-marker [latitude]="details[0].latitude" [longitude]="details[0].longitute" >
                   
                                             <agm-info-window>
-                                              <h6>Longitude:{{posts[0].longitude}}</h6>
-                                              <h6>Latitude: {{posts[0].latitude}}</h6>
+                                              <h6>Longitude:{{details[0].longitude}}</h6>
+                                              <h6>Latitude: {{details[0].longitute}}</h6>
                                             </agm-info-window>
-                                          </agm-marker> -->
-                  
-                                        <!-- <ng-container *ngFor="let u of usersList">
-                                          <agm-marker   *ngIf="u.location"    [latitude]='u.location.coordinates[1]'
-                                             [longitude]='u.location.coordinates[0]'>
-                                            
-                                              <agm-info-window #window>
-                                                <h6>Longitude: {{u.location.coordinates[0]}}</h6>
-                                                <h6>Latitude: {{u.location.coordinates[1]}}</h6>
-                                                <h6>Name: {{u.name}}</h6>
-                                                <h6>email: {{u.email}}</h6>
-                                              </agm-info-window>
                                           </agm-marker>
-                                        </ng-container> -->
-                                        <!-- </agm-map>
+                  
+                                       
+                                        </agm-map>
                                     
-                                   </div> -->
+                                   </div>
 <!--     
                                     <div class="col-lg-6">  
                                         <div class="text-right">
