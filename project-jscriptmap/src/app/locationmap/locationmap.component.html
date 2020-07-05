@@ -4,48 +4,82 @@
   <div class="row bg-dark" style="border-radius: 5px;">
     <h2 class="p-3 mt-2 col-lg-12  text-center font-weight-bold" style="color:rgb(255, 208, 0); width: 70%;">TOURISM FEEDBACK FORM </h2>
   </div>
-    <form class="formmain" #f="ngForm" action="/action_page.php">
-        <div class="form-group">
+    <form class="formmain" #form="ngForm">
+          <div class="form-group" [class.has-error]="nameref.invalid && nameref.touched"
+           [class.has-success]="nameref.valid">
             <label for="text">Name:</label>
-            <input #nameref="ngModel"  [(ngModel)]="textprop" type="text" class="form-control" id="text" placeholder="Enter Your name" name="text" required>
+            <input #nameref="ngModel"  [(ngModel)]="textprop" type="text" class="form-control" id="text" 
+            placeholder="Enter Your name" name="text" required pattern="[a-z,A-Z]+[ ]+[a-z,A-Z]{3,}$">
+            <span *ngIf="nameref.errors" >
+              <span  *ngIf="nameref.errors.pattern && nameref.touched" class="text-danger" style="margin-left: 60px;">Enter First & Last Name</span>
+              <span *ngIf="nameref.touched && nameref.errors.required" class="text-danger">Please Enter Name </span> 
+             </span>
           </div>
-        <div class="form-group">
+          
+        <div class="form-group" [class.has-error]="emailref.invalid && emailref.touched"
+        [class.has-success]="emailref.valid">
           <label for="email">Email:</label>
-          <input  #emailref="ngModel"  [(ngModel)]="emailprop" type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+          <input  #emailref="ngModel"  [(ngModel)]="emailprop" type="email" class="form-control" id="email"
+           placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+           <span *ngIf="emailref.errors">
+            <span *ngIf="emailref.touched && emailref.errors.required" class="text-danger">Please Enter Email</span>
+            <span *ngIf="emailref.touched && emailref.errors.pattern" class="text-danger">not a valid format</span> 
+          </span>
         </div>
-        <div class="form-group">
+        <div class="form-group" [class.has-error]="locationref.invalid && locationref.touched"
+        [class.has-success]="locationref.valid">
           <label for="location">Mention Location of Toursim Places Which was Visited:</label>
-          <textarea  #locationref="ngModel"  [(ngModel)]="locprop"   class="form-control"  name="location" placeholder="Enter Location"  id="location"cols="30" rows="10" style="height: 150px;" required ></textarea>  
+          <input type="text" #locationref="ngModel"  [(ngModel)]="locprop"   class="form-control" 
+           name="location" placeholder="Enter Location" pattern="[a-z,A-Z,0-9.,]+[ ]+[a-z,A-Z,0-9.,]{3,}$" required >  
+           <span *ngIf="locationref.errors">
+            <span *ngIf="locationref.touched && locationref.errors.required" class="text-danger">Please Enter Location</span>
+            <span *ngIf="locationref.touched && locationref.errors.pattern" class="text-danger">enter correct location with space</span> 
+          </span>
         </div>  
-        <div class="form-group">
-          <label for="address">Description About Tourism Place:</label>
-          <textarea  #addressref="ngModel"  [(ngModel)]="addressprop"  class="form-control"  name="address" placeholder="Enter Description"  id="address"cols="30" rows="10" style="height: 150px;" required ></textarea>   
+        <div class="form-group"  [class.has-error]="addressref.invalid && addressref.touched"
+        [class.has-success]="addressref.valid">
+          <label for="address">Description About Tourism Place Which You Want to Share:</label>
+          <textarea  #addressref="ngModel"  [(ngModel)]="addressprop"  class="form-control"  name="address" 
+          placeholder="Enter Description"  id="address"cols="30" rows="10" style="height: 150px;" pattern="[ a-z,A-Z]{10,}" required ></textarea>
+          <span *ngIf="addressref.errors">
+            <span *ngIf="addressref.touched && addressref.errors.required" class="text-danger">Please Enter Description</span>
+            <span *ngIf="addressref.touched && addressref.errors.pattern" class="text-danger">atleast 10 char description is required</span> 
+          </span>   
         </div>
-        <div class="form-group"> 
-          <label for="loc">Enter latitude of the location:</label>
-          <input  #latref="ngModel"  [(ngModel)]="latitudeprop" type="loction" class="form-control" id="long" placeholder="latitude" name="latitude" required>
-         
+        <div class="form-group" [class.has-error]="latref.invalid && latref.touched"
+        [class.has-success]="latref.valid"> 
+          <label for="loc">Enter Latitude of the Location:</label>
+          <input  #latref="ngModel"  [(ngModel)]="latitudeprop" type="loction" class="form-control" id="long"
+           placeholder="latitude" name="latitude" required pattern="[0-9]{1,}$">
+           <span *ngIf="latref.errors">
+            <span *ngIf="latref.touched && latref.errors.required" class="text-danger">Please Enter Latitude</span>
+            <span *ngIf="latref.touched && latref.errors.pattern" class="text-danger">please enter digit</span>
+          </span>   
         </div>
-        <div class="form-group">
-          <label for="loc">Enter longitude of the location:</label>
-          <input  #lonref="ngModel"  [(ngModel)]="longitudeprop" type="loction" class="form-control" id="lat" placeholder="longitude" name="longitude"  required>
+        <div class="form-group" [class.has-error]="lonref.invalid && lonref.touched"
+        [class.has-success]="lonref.valid">
+          <label for="loc">Enter Longitude of the Location:</label>
+          <input  #lonref="ngModel"  [(ngModel)]="longitudeprop" type="loction" class="form-control" id="lat" 
+          placeholder="longitude" name="longitude"  required  pattern="[0-9]$">
+          <span *ngIf="lonref.errors">
+            <span *ngIf="lonref.touched && lonref.errors.required" class="text-danger">Please Enter Longitude</span>
+            <span *ngIf="lonref.touched && lonref.errors.pattern" class="text-danger">please enter digit</span>
+          </span>  
         </div> 
-        <!-- <div class="form-group">
-            <label for="email">Select file :</label>
-            <input type="file" id="myfile" name="myfile">
-         </div>  -->
-         <div class="form-group">
+      
+         <div class="form-group"  [class.has-error]="emailref.invalid && emailref.touched"
+         [class.has-success]="emailref.valid">
           <div  style="margin-top: 10px; margin-bottom: 10px;">
-               <label>form logo</label>
+               <label>Form Logo</label>
                <input (change)="getFile2($event)"  name="logo" type="file" required>
            </div>
            <div style="margin-top: 10px; margin-bottom: 10px;">
-               <label>form Banner</label>
+               <label>Select a File to Show Toursim Place</label>
                <input (change)="getFile($event)"  name="banner" type="file" required>
            </div>
        </div>
        
-        <button style="margin-left: 130px; border-radius: 5px;" type="submit" class="btn btn-primary" (click)="form()">Submit</button>
+        <button style="margin-left: 130px; border-radius: 5px;" type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="forms()">Submit</button>
       </form>
 </div>
 

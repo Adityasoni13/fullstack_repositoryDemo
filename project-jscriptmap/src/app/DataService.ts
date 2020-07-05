@@ -21,8 +21,13 @@ export class DataService {
   }
 
 
-  signIn(d): any {
+  login(d): any {
     return this.http.post('http://localhost:3000/sign-in', d);
+  }
+
+  sendData(f):any{
+    alert(JSON.stringify);
+    return this.http.post("http://localhost:3000/contact", f);
   }
   
   form(formdata: FormData): any {

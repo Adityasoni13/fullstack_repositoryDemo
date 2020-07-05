@@ -57,7 +57,7 @@
                   <!--Grid column-->
                   <div class="col-md-6 col-xl-5 mb-4">
                     <!--Form-->
-                  <form #f="ngForm">
+                  <form #from="ngForm" (ngSubmit)="form">
                     <div class="card wow fadeInRight" data-wow-delay="0.3s">
                       <div class="card-body">
                         <!--Header-->
@@ -69,28 +69,62 @@
                           <hr class="hr-light">
                         </div>
                         <!--Body-->
-                        <div class="md-form">
+                        <div class="md-form" [class.has-error]="nameref.invalid && nameref.touched"
+                           [class.has-success]="nameref.valid">
                           <i class="fas fa-user prefix white-text active"></i>
-                          <input #nameref="ngModel"  [(ngModel)]="nameProp" name="name" type="text" id="form3" class="white-text form-control">
-                          <label for="form3" class="active">Your name</label>
+                          <label for="form3" class="control-label">Your Name</label>
+                          <input #nameref="ngModel"  [(ngModel)]="nameProp" name="name" type="text" id="form3"
+                           class="white-text form-control" pattern="[a-z,A-Z]+[ ]+[a-z,A-Z]{3,}$" required>
+                          
+                           <span *ngIf="nameref.errors">
+                            <span  *ngIf="nameref.errors.pattern && nameref.touched" class="text-danger">Enter First & Last Name</span>
+                            <span *ngIf="nameref.touched && nameref.errors.required" class="text-danger">Please Enter Name </span> 
+                           </span>
+                         
                         </div>
-                        <div class="md-form">
+
+                        <div class="md-form" [class.has-error]="mobileref.invalid && mobileref.touched"
+                           [class.has-success]="nameref.valid">
                           <i class="fas fa-user prefix white-text active"></i>
-                          <input  #mobileref="ngModel"  [(ngModel)]="mobileProp" name="mobile"  type="number" id="form3" class="white-text form-control">
-                          <label for="form3" class="active">Contact No.</label>
+                          <label for="form3" class="active">Contact Number</label>
+                          <input  #mobileref="ngModel"  [(ngModel)]="mobileProp" name="mobile"  type="number" 
+                           id="form3" class="white-text form-control" pattern="[0-9]{10,}$" required>
+                         
+                           <span *ngIf="mobileref.errors">
+                            <span  *ngIf="mobileref.errors.pattern && mobileref.touched" class="text-danger">10 digit number required</span>
+                            <span *ngIf="mobileref.touched && mobileref.errors.required" class="text-danger">Enter Contact Number </span> 
+            
+                          </span>
                         </div>
-                        <div class="md-form">
+
+                        <div class="md-form" [class.has-error]="emailref.invalid && emailref.touched"
+                        [class.has-success]="emailref.valid">
                           <i class="fas fa-envelope prefix white-text active"></i>
-                          <input #emailref="ngModel"  [(ngModel)]="emailProp" name="email" type="email" id="form2" class="white-text form-control">
-                          <label for="form2" class="active">Your email</label>
+                          <label for="form2" class="active">Your Email</label>
+                          <input #emailref="ngModel"  [(ngModel)]="emailProp" name="email" type="email" id="form2" 
+                          class="white-text form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-rule="email" required>
+                         
+                          <span *ngIf="emailref.errors">
+                            <span *ngIf="emailref.touched && emailref.errors.required" class="text-danger">Please Enter Email</span>
+                            <span *ngIf="emailref.touched && emailref.errors.pattern" class="text-danger">not a valid format</span> 
+                          </span>
                         </div>
+
                         <div class="md-form">
-                          <i class="fas fa-lock prefix white-text active"></i>
-                          <input #passref="ngModel"  [(ngModel)]="passwordProp" name="password" type="password" id="form4" class="white-text form-control">
-                          <label for="form4">Your password</label>
+                          <i class="fas fa-lock prefix white-text active"  [class.has-error]="passref.invalid && passref.touched"
+                          [class.has-success]="emailref.valid"></i>
+                          <label for="form4">Your Password</label>
+                          <input #passref="ngModel"  [(ngModel)]="passwordProp" name="password" type="password" required
+                           id="form4" class="white-text form-control" pattern="[A-Z,a-z,0-9,._%+-@!&*$]{8,}$" data-rule="password" >
+                          
+                          <span *ngIf="passref.errors">
+                            <span *ngIf="passref.touched && passref.errors.required" class="text-danger">Please Enter Password</span>
+                            <span *ngIf="passref.touched && passref.errors.pattern" class="text-danger">atleast 8 char or digit with one specia</span> 
+                          </span>
                         </div>
+
                         <div class="text-center mt-4">
-                          <button class="btn btn-indigo" type="submit"  style="color: white;"  (click)="signUp()"  >Sign up</button>
+                          <button class="btn btn-indigo" type="submit"  style="color: white;"  (click)="signUp()" [disabled]="from.invalid" >Sign up</button>
                           <hr class="hr-light mb-3 mt-4">
                           <div class="inline-ul text-center">
                             <a class="p-2 m-2 tw-ic">

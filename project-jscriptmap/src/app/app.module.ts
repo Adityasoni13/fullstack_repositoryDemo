@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { LocationmapComponent } from './locationmap/locationmap.component';
 import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
 import { DetailComponent } from './detail/detail.component';
+import { ContactqurreyComponent } from './contactqurrey/contactqurrey.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { DetailComponent } from './detail/detail.component';
     DashboardheaderComponent,
     LocationmapComponent,
     ListoffeedbackComponent,
-    DetailComponent
+    DetailComponent,
+    ContactqurreyComponent
    
     
   ],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../DataService';
+// import { FormBuilder, AbstractControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -12,10 +13,22 @@ export class SigninComponent implements OnInit {
   mobileProp;
   emailProp;
   passwordProp;
+  form;
+  // rf:FormGroup; 
+  
 
-  constructor(private ds:DataService, private router:Router) { }
+  constructor(private ds:DataService, private router:Router, ) { 
+ 
+  }
 
   ngOnInit(): void {
+    // this.rf = this.fb.group({
+    //   vname:['',Validators.required],
+    //   vmobile:['',Validators.required,Validators.maxLength(10),Validators.minLength(10)],
+    //   vemail:['',Validators.required,Validators.email],
+    //   vpassword:['',Validators.required]
+
+    // });
   }
     
   signUp()

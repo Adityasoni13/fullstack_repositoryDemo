@@ -1,0 +1,91 @@
+<p>contactqurrey works!</p>
+
+
+
+
+<div class="qurreydiv">
+
+    <form #form="ngForm" (ngSubmit)="form">
+        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+          <div class="card-body">
+            <!--Header-->
+
+
+            <div class="text-center" style="margin-top: 60px;">
+              <h3 class="white-text" style="color: rgb(0, 0, 0);">
+                <i class='fas fa-user-circle' style='font-size:36px'></i> QUERY FORM:</h3>
+              <hr class="hr-light">
+            </div>
+            <!--Body-->
+            <div class="md-form"  [class.has-error]="nameref.invalid && nameref.touched"
+               [class.has-success]="nameref.valid">
+              <i class="fas fa-user prefix white-text active"></i>
+              <label for="form2" class="active">Enter Name</label>
+              <input #nameref="ngModel"  [(ngModel)]="nameProp" name="name" type="text" id="form3" placeholder="Enter Name " class="white-text form-control"
+                   data-rule="minlen:4"  pattern="[a-z,A-Z]+[ ]+[a-z,A-Z]{3,}$" required>
+              <span *ngIf="nameref.errors">
+                <span  *ngIf="nameref.errors.pattern && nameref.touched" class="text-danger">Enter First & Last Name</span>
+                <span *ngIf="nameref.touched && nameref.errors.required" class="text-danger">Please Enter Name </span> 
+
+              </span>
+              
+              <!-- <span  class="help-block" class="text-danger" *ngIf="nameref.invalid && nameref.touched" >
+                Please Enter Name
+              </span> -->
+            </div>
+           
+            <div class="md-form" [class.has-error]="emailref.invalid && emailref.touched"
+            [class.has-success]="emailref.valid">
+              <i class="fas fa-envelope prefix white-text active"></i>
+              <label for="form2" class="active">Your email</label>
+              <input #emailref="ngModel"  [(ngModel)]="emailProp" name="email" type="email" id="form2" placeholder="Enter Email"
+               class="white-text form-control" data-rule="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+               <span *ngIf="emailref.errors">
+                <span *ngIf="emailref.touched && emailref.errors.required" class="text-danger">Please Enter Email</span>
+                <span *ngIf="emailref.touched && emailref.errors.pattern" class="text-danger">Not a valid Format</span> 
+              </span>
+            </div>
+            
+            <div class="md-form" [class.has-error]="sub.invalid && sub.touched"
+            [class.has-success]="sub.valid">
+              <i class="fas fa-lock prefix white-text active"></i>
+              <label for="form4">Enter subject</label>
+              <input type="text" class="white-text form-control" #sub="ngModel" name="subject" [(ngModel)]="subProp"
+               id="subject" placeholder="Enter Subject" required  data-rule="minlen:8" pattern="[a-z,A-Z]+[ a-z,A-Z]{6,}$">
+              <span *ngIf="sub.errors">
+                <span *ngIf="sub.touched && sub.errors.required" class="text-danger">Please Enter Subject</span>
+                <span *ngIf="sub.touched && sub.errors.pattern" class="text-danger">atleast 6 char </span> 
+              </span>
+            </div>
+            <div class="md-form" [class.has-error]="ms.invalid && ms.touched"
+            [class.has-success]="ms.valid">
+                <i class="fas fa-lock prefix white-text active"></i>
+                <label for="form4">Please write something for us</label>
+                <textarea class="form-control" name="message" #ms="ngModel" [(ngModel)]="msgProp" required rows="5" data-rule="required"
+                 data-msg="Please write something for us" placeholder="Enter Message" pattern="[a-z,A-Z]+[ a-z,A-Z]{8,}$"></textarea>
+                <span *ngIf="ms.errors">
+                  <span *ngIf="ms.touched && ms.errors.required" class="text-danger">Please write something for us</span>
+                  <span *ngIf="ms.touched && ms.errors.pattern" class="text-danger">atleast 8 char </span> 
+                </span>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-indigo" type="submit"  style="color: black;"  (click)="fun()" [disabled]="form.invalid">Submit</button>
+              <hr class="hr-light mb-3 mt-4">
+              <div class="inline-ul text-center">
+                <a class="p-2 m-2 tw-ic">
+                  <i class="fab fa-twitter white-text"></i>
+                </a>
+                <a class="p-2 m-2 li-ic">
+                  <i class="fab fa-linkedin-in white-text"> </i>
+                </a>
+                <a class="p-2 m-2 ins-ic">
+                  <i class="fas fa-instagram white-text"> </i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form> 
+    
+</div>

@@ -33,7 +33,7 @@ export class LocationmapComponent implements OnInit {
   }
   
   
-   form()
+   forms()
    { const formdata = new FormData();
     formdata.set('banner', this.banner);
     formdata.set('logo', this.logo);

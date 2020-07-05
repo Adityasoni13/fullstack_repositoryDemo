@@ -14,6 +14,7 @@ import { AuthGuard } from './auth.guard';
 import { LocationmapComponent } from './locationmap/locationmap.component';
 import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
 import { DetailComponent } from './detail/detail.component';
+import { ContactqurreyComponent } from './contactqurrey/contactqurrey.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
                                            },
                                        {
                                                 path:'contact', component:ContactComponent
+                                                     
                                            },
                                        {
                                                 path:'login', component:LoginComponent
@@ -43,12 +45,16 @@ const routes: Routes = [
                                       
                                         {
                                              path:'tourism', component:TourismComponent
+                                        },
+                                        {
+                                             path:'contactqurrey', component:ContactqurreyComponent
                                         }
+                                       
                                         
                              ]},
    {path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard], children:[
                                         {
-                                             path: 'locationmap', component:LocationmapComponent
+                                             path: '', component:LocationmapComponent
                                         },
                                         {
                                              path:'map', component:MapComponent
