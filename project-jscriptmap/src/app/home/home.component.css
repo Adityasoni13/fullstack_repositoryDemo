@@ -33,12 +33,12 @@
         }
 
    .div1{
-          margin-top: 138px;
+          margin-top: 115px;
           height: 200px;
          }
 
     .thre{
-        height: 130px;
+        height: 115px;
         width: 40%;
         margin: 0 auto;
       background-color:white;
@@ -72,7 +72,7 @@
     } 
 
     .div2{
-        margin-top: 230px;
+        margin-top: 170px;
     }
     .parentdiv{
         height: 400px;
@@ -113,6 +113,25 @@
         background-position: center;
     
     }
+    .imgd{
+        background-image: url("../../assets/images/culture.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 450px;
+    
+    }
+   .parentculture{
+
+    height: 550px;
+    background-color: rgb(255, 208, 0); 
+   }
+  .clsA{
+      height: 550px;
+      background-color: white;
+      margin: 0 ;
+
+  }
+   
     ul{
     list-style: none;
     margin-left: 35%;

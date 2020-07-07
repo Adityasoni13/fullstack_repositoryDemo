@@ -16,9 +16,7 @@ export class ContactqurreyComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   fun(){
-
     alert({name:this.nameProp,email:this.emailProp,subject:this.subProp,message:this.msgProp});
      //if(this.mm.invalid){
     this.ds.sendData({name:this.nameProp,email:this.emailProp,subject:this.subProp,message:this.msgProp})
@@ -32,5 +30,4 @@ export class ContactqurreyComponent implements OnInit {
         }
       })
     }
-
 }

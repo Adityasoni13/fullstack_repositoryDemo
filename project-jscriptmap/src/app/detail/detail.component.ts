@@ -15,17 +15,12 @@ import { DataService } from '../DataService';
 export class DetailComponent implements OnInit {
   details;
   id;
-
-
+  
   //about map
 
   latitude = 20.5937;
   longitute = 78.9629;
-  // posts;
-
- //about map
-
-
+  
   constructor(private ds:DataService,private route:ActivatedRoute, private router:Router) { }
  
   
@@ -44,33 +39,9 @@ export class DetailComponent implements OnInit {
     })
   });
 
-
-
-  //about map
-//   this.route.queryParamMap.subscribe((p)=>{
-//     this.id=p.get('id');
-//      alert(p.get('id'));
-//       this.ds.getEvents().subscribe((d)=>{
-//         this.posts=d.desc;
-//         this.posts=this.posts.filter((p)=>{
-//           return p._id==this.id;
-          
-//         })
-
-//         console.log(this.posts);
-
-//     })
-// })
-  //about map
-
-
   }
-
-  
  close(){
    
    this.router.navigate(['/dashboard/listoffeedback']);
   }
-
- 
 }

@@ -3,6 +3,7 @@
 <div class="form">
   <div class="row bg-dark" style="border-radius: 5px;">
     <h2 class="p-3 mt-2 col-lg-12  text-center font-weight-bold" style="color:rgb(255, 208, 0); width: 70%;">TOURISM FEEDBACK FORM </h2>
+    <p class="text-center font-weight-bold" style="color:white; width: 70%; margin: 0 auto;">fill the form if u want to share your past tourism experience.. </p>
   </div>
     <form class="formmain" #form="ngForm">
           <div class="form-group" [class.has-error]="nameref.invalid && nameref.touched"
@@ -60,7 +61,7 @@
         [class.has-success]="lonref.valid">
           <label for="loc">Enter Longitude of the Location:</label>
           <input  #lonref="ngModel"  [(ngModel)]="longitudeprop" type="loction" class="form-control" id="lat" 
-          placeholder="longitude" name="longitude"  required  pattern="[0-9]$">
+          placeholder="longitude" name="longitude"  required  pattern="[0-9]{1,}$">
           <span *ngIf="lonref.errors">
             <span *ngIf="lonref.touched && lonref.errors.required" class="text-danger">Please Enter Longitude</span>
             <span *ngIf="lonref.touched && lonref.errors.pattern" class="text-danger">please enter digit</span>

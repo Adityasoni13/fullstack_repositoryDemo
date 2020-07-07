@@ -16,6 +16,7 @@
     body,
     header, */
     .view {
+     
       height: 650px;
     }
   }
@@ -54,4 +55,7 @@
   .md-form{
     margin: 12px;
   }
-  
+  .container{
+    padding-bottom: 150px;
+
+  }

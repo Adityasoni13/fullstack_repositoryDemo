@@ -52,31 +52,5 @@ export class LocationmapComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  
-   
-  //  {     
-  //   this.ds.form({text:this.textProp, email:this.emailProp, address:this.addressProp, latitude:this.latitudeProp, longitude:this.longitudeProp, file:this.myfileProp})
-  //   .subscribe((response)=>{
-  //   alert(JSON.stringify(response));
-  //    if(response.status=="ok")
-  //      {
-        
-     
-
-  //       alert('submit successfull');
-
-        //  this.router.navigate(['/login']);
-
-
-//       }
-//       else
-//       {
-//         alert("some problem");
-//       }
-//   })
-// }
-
-
-   
+ 
 }

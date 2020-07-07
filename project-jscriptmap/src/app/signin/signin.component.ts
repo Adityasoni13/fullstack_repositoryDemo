@@ -22,13 +22,7 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.rf = this.fb.group({
-    //   vname:['',Validators.required],
-    //   vmobile:['',Validators.required,Validators.maxLength(10),Validators.minLength(10)],
-    //   vemail:['',Validators.required,Validators.email],
-    //   vpassword:['',Validators.required]
-
-    // });
+   
   }
     
   signUp()
