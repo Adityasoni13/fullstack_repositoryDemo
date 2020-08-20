@@ -22,6 +22,12 @@ import { LocationmapComponent } from './locationmap/locationmap.component';
 import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
 import { DetailComponent } from './detail/detail.component';
 import { ContactqurreyComponent } from './contactqurrey/contactqurrey.component';
+import { ReligiousComponent } from './religious/religious.component';
+import { PhilosiphyComponent } from './philosiphy/philosiphy.component';
+import { WeddingComponent } from './wedding/wedding.component';
+import { SculptureComponent } from './sculpture/sculpture.component';
+import { FestivalsComponent } from './festivals/festivals.component';
+import { ClothingComponent } from './clothing/clothing.component';
 
 
 @NgModule({
@@ -43,7 +49,13 @@ import { ContactqurreyComponent } from './contactqurrey/contactqurrey.component'
     LocationmapComponent,
     ListoffeedbackComponent,
     DetailComponent,
-    ContactqurreyComponent
+    ContactqurreyComponent,
+    ReligiousComponent,
+    PhilosiphyComponent,
+    WeddingComponent,
+    SculptureComponent,
+    FestivalsComponent,
+    ClothingComponent
    
     
   ],

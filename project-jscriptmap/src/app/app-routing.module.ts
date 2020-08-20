@@ -15,6 +15,12 @@ import { LocationmapComponent } from './locationmap/locationmap.component';
 import { ListoffeedbackComponent } from './listoffeedback/listoffeedback.component';
 import { DetailComponent } from './detail/detail.component';
 import { ContactqurreyComponent } from './contactqurrey/contactqurrey.component';
+import { ReligiousComponent } from './religious/religious.component';
+import { PhilosiphyComponent } from './philosiphy/philosiphy.component';
+import { WeddingComponent } from './wedding/wedding.component';
+import { SculptureComponent } from './sculpture/sculpture.component';
+import { FestivalsComponent } from './festivals/festivals.component';
+import { ClothingComponent } from './clothing/clothing.component';
 
 
 const routes: Routes = [
@@ -48,7 +54,26 @@ const routes: Routes = [
                                         },
                                         {
                                              path:'contactqurrey', component:ContactqurreyComponent
+                                        },
+                                        {
+                                             path:'religious', component:ReligiousComponent
+                                        },
+                                        {
+                                             path: 'philosiphy', component:PhilosiphyComponent
+                                        },
+                                        {
+                                             path: 'wedding', component:WeddingComponent
+                                        },
+                                        {
+                                             path: 'sculpture', component:SculptureComponent
+                                        },
+                                        {
+                                             path: 'festivals', component:FestivalsComponent
+                                        },
+                                        {
+                                             path: 'clothing', component:ClothingComponent
                                         }
+
                                        
                                         
                              ]},
